@@ -23,8 +23,8 @@ Users should be able to:
 
 ## Links
 
-- Solution URL: 
-- Live Site URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/product-preview-card-component-1KadZ36FGa
+- Live Site URL: https://prodpreviewcard-abe.netlify.app
 
 ## Author
 
