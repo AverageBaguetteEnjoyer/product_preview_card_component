@@ -1,0 +1,155 @@
+:root {
+    --bg-body: oklch(94.111% 0.0137 67.487);
+    --bg-card: oklch(100% 0.00011 271.152);
+    --clr-font-primary: oklch(55.533% 0.0365 273.676);
+    --clr-font-secondary: oklch(25.286% 0.0183 252);
+    --clr-font-price: oklch(55.138% 0.08028 167.044);
+    --clr-font-button: oklch(100% 0.00011 271.152);
+    --bg-button: oklch(55.138% 0.08028 167.044);
+    --bg-button-hover: oklch(33.901% 0.05044 166.821);
+    --font-family-primary: "Montserrat", sans-serif;
+    --font-family-secondary: "Fraunces", serif;
+    --animation-speed: .25s;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-body);
+    font-family: var(--font-family-primary);
+}
+
+main {
+    min-height: 100dvh;
+    padding: 1rem 1.25rem;
+    display: grid;
+    grid-template-columns: minmax(0, 37.5rem);
+    place-content: center;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card__illustration img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.card__main {
+    padding: 2rem;
+    background: var(--bg-card);
+    color: var(--clr-font-primary);
+    display: grid;
+    gap: 2rem;
+}
+
+.card__logo {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .3125rem;
+    line-height: 1.2;
+}
+
+.card__main-content {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.card__main-content h1 {
+    color: var(--clr-font-secondary);
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: var(--font-family-secondary);
+    line-height: 1;
+}
+
+.card__main-content p {
+    font-size: .875rem;
+    line-height: 1.6;
+}
+
+.card__price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card__price-current {
+    color: var(--clr-font-price);
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: var(--font-family-secondary);
+    line-height: 1;
+}
+
+.card__price-old {
+    font-size: .8125rem;
+    line-height: 1.2;
+}
+
+.card__add-to-cart-btn {
+    border: none;
+    padding: 1rem 2rem;
+    background: var(--bg-button);
+    color: var(--clr-font-button);
+    font-family: var(--font-family-primary);
+    font-size: .875rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    transition: background var(--animation-speed);
+}
+
+.card__add-to-cart-btn:focus-visible {
+    outline: 2px solid var(--bg-button-hover);
+    outline-offset: .25rem;
+}
+
+.card__add-to-cart-btn:is(:hover, :focus-visible) {
+    background: var(--bg-button-hover);
+}
+
+.card__add-to-cart-btn span {
+    line-height: 1.1;
+}
+
+@media (max-width: 30rem) {
+    main {
+        padding: 5rem .8125rem;
+        grid-template-columns: 100%;
+    }
+
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .card__illustration {
+        height: 21.375rem;
+    }
+
+    .card__main {
+        gap: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --animation-speed: 0s;
+    }
+}
